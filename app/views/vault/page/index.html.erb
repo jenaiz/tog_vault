@@ -19,8 +19,10 @@
     </tr>
   </thead>
   <tbody>
-  <% if @homepage %>
-    <%= render_node @homepage -%>
+  <% if @homepages && @homepages.size > 0 %>
+    <% @homepages.each do |home| %>
+      <%= render_node home -%>
+    <% end %>     
   <% else -%>
     <tr>
       <td colspan="4"><%= I18n.t("tog_vault.page.no_pages") %></td>

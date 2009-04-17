@@ -1,7 +1,7 @@
 class Vault::PageController < Admin::BaseController
 
   def index
-    @homepage = Page.find_by_parent_id(nil)
+    @homepages = Page.find_all_by_parent_id(nil)
   end
 
   def new
